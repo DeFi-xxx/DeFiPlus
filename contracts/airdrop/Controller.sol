@@ -3,7 +3,7 @@ pragma solidity ^0.6.12;
 
 import "../libraries/SafeERC20.sol";
 
-interface BaseAirdrop {
+interface IBaseAirdrop {
     function setReceiveInfo(address _token, bytes32 _receiveInfo) external;
 }
 
@@ -81,7 +81,7 @@ contract Controller {
         }
         require(airdrops[_option].active, "!active");
         bytes32 receiveInfo = keccak256(abi.encode(_token, _value));
-        BaseAirdrop(airdrops[_option].airdrop).setReceiveInfo(_token, receiveInfo);
+        IBaseAirdrop(airdrops[_option].airdrop).setReceiveInfo(_token, receiveInfo);
         projectInfos.push(ProjectInfo(msg.sender, _project, _totalNum, block.timestamp, _option));
         numProject++;
         emit Airdrop(msg.sender, _token, _value);

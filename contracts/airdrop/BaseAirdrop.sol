@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.12;
 
-import "./libraries/SafeERC20.sol";
+import "../libraries/SafeERC20.sol";
 
-interface Controller {
+interface IController {
     function operators(address operator) external view returns(bool);
 }
 

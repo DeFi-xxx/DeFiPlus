@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.6.12;
 
 import "../../interface/IERC20.sol";
@@ -5,17 +6,14 @@ import "../../libraries/Math.sol";
 import "../../libraries/SafeMath.sol";
 import "../../libraries/Address.sol";
 import "../../libraries/SafeERC20.sol";
-
-interface MasterChef {
-    function getAllocation(address _lpToken, address _rewardToken) external view returns(address);
-}
+import "../interface/IMasterChef.sol";
 
 
 contract FirstAllocation {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
-    MasterChef masterChef;
+    IMasterChef masterChef;
 
     struct PoolInfo {
         // lp地址
@@ -63,7 +61,7 @@ contract FirstAllocation {
     // 池子索引
     mapping(bytes32 => uint) public poolIndex;
 
-    constructor(MasterChef _masterChef) public {
+    constructor(IMasterChef _masterChef) public {
         masterChef = _masterChef;
     }
 
