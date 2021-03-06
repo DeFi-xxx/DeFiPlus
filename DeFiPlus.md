@@ -8,9 +8,9 @@
 
 ### Contract Address
 
-**MasterChef: ** 0xd936fA73e41B8Ff0d075B28e60B943271fd3d096
+**MasterChef: ** 0xA683351a223bDeE8Ae81d7133F58c7C1F6a29677
 
-**FirstAllocation: ** 0x1acb54865e710c6cf8522582de51074d7dE33339
+**FirstAllocation: ** 0xc62891B040Bac903851ff09C6EA70a2c3c87C42e
 
 **SecondAllocation: ** 0x0E02a99F18c476a42e73F731228f25948Aaea155
 

@@ -46,6 +46,8 @@ contract FirstAllocation {
         mapping(address => uint256) deposits;
     }
 
+    uint public poolLength;
+
     PoolInfo[] public poolInfo;
 
 
@@ -77,7 +79,8 @@ contract FirstAllocation {
             rewardPerTokenStored: 0,
             totalAmount: 0
         }));
-        poolIndex[keccak256(abi.encode(_lpToken, _rewardToken))] = poolInfo.length - 1;
+        poolLength++;
+        poolIndex[keccak256(abi.encodePacked(_lpToken, _rewardToken))] = poolLength - 1;
     }
 
     function stake(uint _amount, bytes32 _hash) external updateReward( msg.sender, _hash) {
@@ -112,11 +115,7 @@ contract FirstAllocation {
     }
 
     function getDepositInfo(uint _index) public view returns(uint) {
-        return poolInfo[_index].deposits[ msg.sender];
-    }
-
-    function poolLength() public view returns(uint) {
-        return poolInfo.length;
+        return poolInfo[_index].deposits[msg.sender];
     }
 
     modifier updateReward(address account, bytes32 _hash) {

@@ -61,7 +61,7 @@ const signer = provider.getSigner();
                 rewardAmount: this.scientificNumber(10000e18),
                 startTime: 1615017859,
                 duration: 10,
-                firstAllocation: "0xf1dC5a0Bb413f0606FD37d50d440D170620A631E",
+                firstAllocation: "0xc62891B040Bac903851ff09C6EA70a2c3c87C42e",
                 secondAllocation: "0x0E02a99F18c476a42e73F731228f25948Aaea155",
                 mineWay: 1,
             }

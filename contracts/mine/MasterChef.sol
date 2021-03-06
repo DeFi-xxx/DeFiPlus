@@ -33,12 +33,12 @@ contract MasterChef {
     }
 
     function getAllocation(address _lpToken, address _rewardToken) public view returns(address) {
-        bytes32 _hash = keccak256(abi.encode(_lpToken, _rewardToken));
+        bytes32 _hash = keccak256(abi.encodePacked(_lpToken, _rewardToken));
         return allocations[_hash];
     }
 
     function setAllocation(address _lpToken, address _rewardToken, address _allocation) internal {
-        bytes32 _hash = keccak256(abi.encode(_lpToken, _rewardToken));
+        bytes32 _hash = keccak256(abi.encodePacked(_lpToken, _rewardToken));
         allocations[_hash] = _allocation;
     }
 }
