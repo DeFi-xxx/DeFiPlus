@@ -15,11 +15,11 @@
         <div class="box">
             <div class="top">
                 <div class="item">
-                    <div >{{this.depositInfo}}</div>
+                    <div >{{depositInfo}}</div>
                     <div>存入信息</div>
                 </div>
                 <div class="item">
-                    <div style="color: #00E3B6" >{{this.incomeInfo}}</div>
+                    <div style="color: #00E3B6" >{{incomeInfo}}</div>
                     <div>收益信息</div>
                 </div>
             </div>
@@ -49,8 +49,8 @@ const signer = provider.getSigner();
                 firstAllocation: "0x1acb54865e710c6cf8522582de51074d7dE33339",
                 allocationContract: new ethers.Contract(this.firstAllocation, Allocation1.abi, provider),
                 allocationContractWithSigner: allocationContract.connect(signer),
-                depositInfo: 0,
-                incomeInfo: 0,
+                depositInfo: "",
+                incomeInfo: "",
 
             }
         },
