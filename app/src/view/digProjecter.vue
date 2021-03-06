@@ -15,18 +15,18 @@
         <div class="box">
             <div class="top">
                 <div class="item">
-                    <div>0.000000</div>
+                    <div >{{this.depositInfo}}</div>
                     <div>存入信息</div>
                 </div>
                 <div class="item">
-                    <div style="color: #00E3B6">0.000000</div>
+                    <div style="color: #00E3B6" >{{this.incomeInfo}}</div>
                     <div>收益信息</div>
                 </div>
             </div>
             <div class="btns">
-                <div class="btn">存入</div>
-                <div class="btn">领取</div>
-                <div class="btn">退出</div>
+                <div class="btn" @click="stake()">存入</div>
+                <div class="btn" @click="withraw()">领取</div>
+                <div class="btn" @click="exit()">退出</div>
             </div>
 
         </div>
@@ -34,12 +34,72 @@
 </template>
 
 <script>
+import { ethers } from 'ethers';
+import Web3 from "web3";
+import IERC20 from "../../../build/contracts/IERC20.json";
+import Allocation1 from "../../../build/contracts/FirstAllocation.json";
+const provider = new ethers.providers.Web3Provider(web3.currentProvider);
+const signer = provider.getSigner();
+
     export default {
         name: "projecter",
+        data(){
+            return{
+                web3: null,
+                firstAllocation: "0x1acb54865e710c6cf8522582de51074d7dE33339",
+                allocationContract: new ethers.Contract(this.firstAllocation, Allocation1.abi, provider),
+                allocationContractWithSigner: allocationContract.connect(signer),
+                depositInfo: 0,
+                incomeInfo: 0,
+
+            }
+        },
+        created(){
+            window.ethers = ethers;
+            if (window.ethereum) {
+                // use MetaMask's provider
+                this.web3 = new Web3(window.ethereum);
+                window.ethereum.enable(); // get permission to access accounts
+            } else {
+                console.warn(
+                "No web3 detected. Falling back to http://127.0.0.1:8545. You should remove this fallback when you deploy live",
+                );
+                // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+                this.web3 = new Web3(
+                new Web3.providers.HttpProvider("http://127.0.0.1:8545"),
+                );
+            }
+            window.web3 = this.web3;
+            this.getInfo();
+        },
         methods:{
             toPage(){
                 this.$router.push('/dig')
-            }
+            },
+            async getInfo() {
+            //     let len = await allocationContract.poolLength();
+            //     console.log(len);
+            //     let poolInfo = await allocationContract.poolInfo(len - 1);
+            //     this.depositInfo = allocationContract.getDepositInfo(len - 1);
+            //     // hash = ethers.solidity(lpToken, rewardToken)
+            //     this.incomeInfo = allocationContract.earned(this.account, hash);
+            },
+            stake() {
+            //     allocationContractWithSigner.stake(数量, hash);
+            },
+            withraw() {
+            //     allocationContractWithSigner.stake(hash, 数量);
+            },
+            exit() {
+            //     let hash = ethers.utils.solidityKeccak256([address, address], "lptoken", "rewardtoken");
+            //     allocationContractWithSigner.exit(hash);
+            },
+            numberToHex(num) {
+                return this.web3.utils.numberToHex(num);
+            },
+            hexToNumberString(hex) {
+                return this.web3.utils.hexToNumberString(hex);
+            },
         }
     }
 </script>

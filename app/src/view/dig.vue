@@ -58,8 +58,8 @@ const signer = provider.getSigner();
                 web3: null,
                 stakeToken: "0x3bFcbe8fd80467750963Ec9b7A1C74cFC4d7fC80",
                 rewardToken: "0x3bFcbe8fd80467750963Ec9b7A1C74cFC4d7fC80",
-                rewardAmount: 10000e18,
-                startTime: 1,
+                rewardAmount: this.scientificNumber(10000e18),
+                startTime: 1615017859,
                 duration: 10,
                 firstAllocation: "0x1acb54865e710c6cf8522582de51074d7dE33339",
                 secondAllocation: "0x0E02a99F18c476a42e73F731228f25948Aaea155",
@@ -86,10 +86,6 @@ const signer = provider.getSigner();
         methods:{
             async submit1(){
                 let contract = new ethers.Contract(this.rewardToken, IERC20.abi, provider);
-                // let totalSupply = await contract.totalSupply();
-                
-                // totalSupply = this.web3.utils.hexToNumberString(totalSupply._hex);
-                // console.log(totalSupply);
                 let contractWithSigner = contract.connect(signer);
                 let result = await contractWithSigner.approve(this.firstAllocation, this.web3.utils.numberToHex(this.rewardAmount));
                 console.log(result);
@@ -99,10 +95,9 @@ const signer = provider.getSigner();
                 let allocationContractWithSigner = allocationContract.connect(signer);
                 if(this.mineWay == 1) {
                     let time = this.duration * 24 * 60 * 60;
-                    console.log(allocationContractWithSigner);
-                    console.log(time);
-                    let alocationResult = await allocationContractwithSigner.add(this.stakeToken, this.rewardToken, numberToHex(this.rewardAmount), numberToHex(this.startTime), numberToHex(time));
-                //     console.log(alocationResult);
+                    let alocationResult = await allocationContractWithSigner.add(this.stakeToken, this.rewardToken, this.numberToHex(this.rewardAmount), this.numberToHex(this.startTime), this.numberToHex(time));
+                    console.log(alocationResult);
+               //     console.log(alocationResult);
                 // console.log(1)
                 } else {
                     
@@ -113,6 +108,36 @@ const signer = provider.getSigner();
             },
             toPage(){
                 this.$router.push('/digProjecter')
+            },
+             scientificNumber (num) {
+                if (!num) return num
+                const str = num.toString()
+                const reg = /^(\d+)(\.\d+)?(e)([+]?\d+)$/
+                const reg2 = /^(\d+)(\.\d+)?(e)([-]?\d+)$/
+                let arr
+                let len
+                let zero = ''
+                if (reg.test(str)) {
+                arr = reg.exec(str)
+                // 保留小数位数
+                const arr2 = arr[2] ? arr[2].replace('.', '') : ''
+                // 此处减去arr2的长度为了兼容有小数情况
+                len = Math.abs(arr[4]) - (arr2.length || 0)
+                for (var i = 0; i < len; i++) {
+                    zero += '0'
+                }
+                return arr[1] + arr2 + zero
+                } else if (reg2.test(str)) {
+                arr = reg2.exec(str)
+                len = Math.abs(arr[4]) - 1
+                const arr2 = arr[2] ? arr[2].replace('.', '') : ''
+                for (let index = 0; index < len; index++) {
+                    zero += '0'
+                }
+                return '0.' + zero + arr[1] + arr2
+                } else {
+                return num
+                }
             }
         }
     }
@@ -123,14 +148,14 @@ const signer = provider.getSigner();
         padding: 0;
         margin: 0;
     }
-.promise{
-    background: url("/img2/bg1.png");
-    background-size: 100% 100%;
-    width:343px;
-    height: auto;
-    margin: 13px auto;
-    padding-bottom: 20px;
-}
+    .promise{
+        background: url("/img2/bg1.png");
+        background-size: 100% 100%;
+        width:343px;
+        height: auto;
+        margin: 13px auto;
+        padding-bottom: 20px;
+    }
     .rightPage{
         color:#FA8C16;
         font-size: 9px;
