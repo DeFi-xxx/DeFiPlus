@@ -8,18 +8,17 @@
         <div class="line"></div>
         <div class="promise">
             <div class="promiseBox">
-                <div class="hsize">XXX</div>
                 <div class="text">Token合约地址：0xxxxxxxxx</div>
             </div>
         </div>
         <div class="box">
             <div class="top">
                 <div class="item">
-                    <div >{{depositInfo}}</div>
+                    <div >1</div>
                     <div>存入信息</div>
                 </div>
                 <div class="item">
-                    <div style="color: #00E3B6" >{{incomeInfo}}</div>
+                    <div style="color: #00E3B6" >1</div>
                     <div>收益信息</div>
                 </div>
             </div>
@@ -47,8 +46,10 @@ const signer = provider.getSigner();
             return{
                 web3: null,
                 firstAllocation: "0x1acb54865e710c6cf8522582de51074d7dE33339",
-                depositInfo: 0,
-                incomeInfo: 0,
+                addressArr: [],
+                deposits: [],
+                incomes: [],
+
 
             }
         },
@@ -76,23 +77,48 @@ const signer = provider.getSigner();
             },
             async getPoolInfo() {
                 let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
-                let allocationContractWithSigner = allocationContract.connect(signer);
+                
                 let length = await allocationContract.poolLength();
                 console.log(this.hexToNumberString(length._hex));
-            //     let poolInfo = await allocationContract.poolInfo(len - 1);
-            //     this.depositInfo = allocationContract.getDepositInfo(len - 1);
-            //     // hash = ethers.solidity(lpToken, rewardToken)
-            //     this.incomeInfo = allocationContract.earned(this.account, hash);
+                this.addressArr = [];
+                this.deposits = [];
+                this.incomes = [];
+                for(let i = 0; i < this.hexToNumberString(length._hex); i++) {
+                    let poolInfo = await allocationContract.poolInfo(i);
+                    this.addressArr.push(poolInfo.rewardToken);
+                    let deposit = await allocationContract.getDepositInfo(i);
+                    this.deposits.push(deposit);
+                    let hash = ethers.utils.solidityKeccak256([address, address], poolInfo.lpToken, poolInfo.rewardToken);
+                    let income = await allocationContract.earned(this.account, hash);
+                    this.incomes.push(income);
+                }
             },
-            stake() {
-            //     allocationContractWithSigner.stake(数量, hash);
+            async stake(index, amount) {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let poolInfo = await allocationContract.poolInfo(index);
+                let lpToken = poolInfo.lpToken;
+                let rewardToken = poolInfo.rewardToken;
+                let hash = ethers.utils.solidityKeccak256([address, address], lpToken, rewardToken);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                await allocationContractWithSigner.stake(amount, hash);
             },
-            withraw() {
-            //     allocationContractWithSigner.stake(hash, 数量);
+            async withraw(index) {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let poolInfo = await allocationContract.poolInfo(index);
+                let lpToken = poolInfo.lpToken;
+                let rewardToken = poolInfo.rewardToken;
+                let hash = ethers.utils.solidityKeccak256([address, address], lpToken, rewardToken);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                await allocationContractWithSigner.getReward(hash);
             },
-            exit() {
-            //     let hash = ethers.utils.solidityKeccak256([address, address], "lptoken", "rewardtoken");
-            //     allocationContractWithSigner.exit(hash);
+            async exit(index) {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let poolInfo = await allocationContract.poolInfo(index);
+                let lpToken = poolInfo.lpToken;
+                let rewardToken = poolInfo.rewardToken;
+                let hash = ethers.utils.solidityKeccak256([address, address], lpToken, rewardToken);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                await allocationContractWithSigner.exit(hash);
             },
             numberToHex(num) {
                 return this.web3.utils.numberToHex(num);
