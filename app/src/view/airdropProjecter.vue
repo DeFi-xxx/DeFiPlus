@@ -6,7 +6,7 @@
             </div>
             <div class="progress">
                 <div class="row1">
-                    <div>HTCube</div>
+                    <div>XXX</div>
                     <img src="/img2/iconTime.png"/>
                     <div style="color: #00E3B6;font-size: 11px">进行中</div>
                 </div>
@@ -14,14 +14,14 @@
                     <div class="line" :style="getWith()"></div>
                 </div>
                 <div class="row3">
-                    <div style="color: #00FFCC">500HTC</div>
-                    <div>100HTC</div>
+                    <div style="color: #00FFCC">500</div>
+                    <div>100</div>
                 </div>
             </div>
             <div class="chosen" @click="submit()">领取</div>
             <transition name="draw">
                 <div class="info" v-if="flag">
-                    <div class="hsize">HTCube</div>
+                    <div class="hsize">XXX</div>
                     <div class="text">Token合约地址：0xxxxxxxxx</div>
                     <div class="text">项目信息：叭叭叭叭了个叭叭</div>
                     <div class="text">空投方式：按账号余额排名，取Top1000</div>

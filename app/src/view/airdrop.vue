@@ -4,20 +4,16 @@
             <div class="rightPage" @click="toPage()">
                 领空投
             </div>
-            <input   id="inputAddress"  placeholder="请输入合约地址进行授权"      maxlength="30" />
-            <div class="chosen" @click="submit()">已授权</div>
         </div>
         <div class="projectMes">
-            <input class="input"  placeholder="请输入Token合约地址"      maxlength="30"/>
+            <input class="input"  placeholder="请输入Token合约地址" />
             <input class="input" placeholder="空投数量" />
-<!--            <select id="secWay">-->
-<!--                <option  style="display:none"  value="">选择空投方式</option>-->
-<!--                <option :value="coupon.id" v-for="coupon in couponList">5</option>-->
-<!--                <option value="2">12</option>-->
-<!--            </select>-->
+
             <select id="secWay" v-model="selected" @change="getSelected()">
                 <option v-for="item in list" :style="{display:item.id==0?'none':'block'}"  :value="item.id" >{{item.name}}</option>
             </select>
+            <div class="chosen" @click="submit()">授权</div>
+            <div class="chosen" @click="submit()">发放空投</div>
         </div>
     </div>
 </template>
@@ -35,15 +31,15 @@
                     },
                     {
                         id: '1',
-                        name: 'zzz'
+                        name: '1'
                     },
                     {
                         id: '3',
-                        name: 'yyy'
+                        name: '2'
                     },
                     {
                         id: '2',
-                        name: 'ccc'
+                        name: '3'
                     },
                 ]
             }
@@ -71,7 +67,7 @@
         margin: 0;
     }
     .promise{
-        background: url("/img2/bg1.png");
+ 
         background-size: 100% 100%;
         width:343px;
         height: auto;
