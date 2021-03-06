@@ -15,11 +15,11 @@
         <div class="box">
             <div class="top">
                 <div class="item">
-                    <div >{{this.depositInfo}}</div>
+                    <div >{{depositInfo}}</div>
                     <div>存入信息</div>
                 </div>
                 <div class="item">
-                    <div style="color: #00E3B6" >{{this.incomeInfo}}</div>
+                    <div style="color: #00E3B6" >{{incomeInfo}}</div>
                     <div>收益信息</div>
                 </div>
             </div>
@@ -47,8 +47,6 @@ const signer = provider.getSigner();
             return{
                 web3: null,
                 firstAllocation: "0x1acb54865e710c6cf8522582de51074d7dE33339",
-                allocationContract: new ethers.Contract(this.firstAllocation, Allocation1.abi, provider),
-                allocationContractWithSigner: allocationContract.connect(signer),
                 depositInfo: 0,
                 incomeInfo: 0,
 
@@ -70,15 +68,17 @@ const signer = provider.getSigner();
                 );
             }
             window.web3 = this.web3;
-            this.getInfo();
+            this.getPoolInfo();
         },
         methods:{
             toPage(){
                 this.$router.push('/dig')
             },
-            async getInfo() {
-            //     let len = await allocationContract.poolLength();
-            //     console.log(len);
+            async getPoolInfo() {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                let length = await allocationContract.poolLength();
+                console.log(this.hexToNumberString(length._hex));
             //     let poolInfo = await allocationContract.poolInfo(len - 1);
             //     this.depositInfo = allocationContract.getDepositInfo(len - 1);
             //     // hash = ethers.solidity(lpToken, rewardToken)
