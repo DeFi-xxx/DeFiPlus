@@ -16,49 +16,39 @@ contract FirstAllocation {
     IMasterChef masterChef;
 
     struct PoolInfo {
-        // lp地址
+
         IERC20 lpToken;
 
-        // 奖励token
         IERC20 rewardToken;
 
-        // 奖励数量
         uint rewardAmount;
 
-        // 开始时间
         uint startTime;
 
-        // 挖矿天数
         uint duration;
 
-        // 结束时间
         uint periodFinish;
 
-        // 每秒获得的奖励
         uint rewardRate;
 
-        // 上次更新时间
         uint lastUpdateTime;
 
-        // 每个质押的token能获得的奖励
         uint rewardPerTokenStored;
 
-        // 质押总量
         uint totalAmount;
 
-        // 每个质押token给用户的奖励
         mapping(address => uint256) userRewardPerTokenPaid;
 
-        // 用户奖励
+
         mapping(address => uint256) rewards;
 
-        // 入金映射
+
         mapping(address => uint256) deposits;
     }
 
     PoolInfo[] public poolInfo;
 
-    // 池子索引
+
     mapping(bytes32 => uint) public poolIndex;
 
     constructor(IMasterChef _masterChef) public {
@@ -104,7 +94,7 @@ contract FirstAllocation {
         getReward( _hash);
     }
 
-    // 结算HTC奖励
+
     function getReward(bytes32 _hash) public updateReward( msg.sender, _hash) {
         uint256 reward = earned( msg.sender, _hash);
         uint index = poolIndex[_hash];
@@ -119,6 +109,10 @@ contract FirstAllocation {
         uint index = poolIndex[_hash];
         poolInfo[index].deposits[ msg.sender] = poolInfo[index].deposits[ msg.sender].sub(_amount);
         poolInfo[index].lpToken.safeTransfer( msg.sender, _amount);
+    }
+
+    function getDepositInfo(uint _index) public view returns(uint) {
+        return poolInfo[_index].deposits[ msg.sender];
     }
 
     function poolLength() public view returns(uint) {
@@ -146,7 +140,7 @@ contract FirstAllocation {
         if (poolInfo[index].totalAmount == 0) {
             return poolInfo[index].rewardPerTokenStored;
         }
-        // 每个HT能获得的奖励 = 每个HT能获得的奖励 + ((当前区块时间 - 上次更新时间) * 每秒能获得的奖励 / 质押HT总量)
+
         return
             poolInfo[index].rewardPerTokenStored.add(
                 lastTimeRewardApplicable(_hash)
@@ -159,7 +153,7 @@ contract FirstAllocation {
 
     function earned(address account, bytes32 _hash) public view returns (uint256) {
         uint index = poolIndex[_hash];
-        // 用户奖励 = 用户质押HT数量 * (每个HT能获得的奖励 - 每个令牌支付给用户的奖励) + 用户奖励
+
         return
             poolInfo[index].deposits[account]
                 .mul(rewardPerToken(_hash).sub(poolInfo[index].userRewardPerTokenPaid[account]))

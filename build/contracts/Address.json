@@ -1,16 +1,16 @@
 {
   "contractName": "Address",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/mzdata/DeFiPlus/contracts/libraries/Address.sol\":\"Address\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/mzdata/DeFiPlus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]}},\"version\":1}",
-  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220484070970d5ee6b766f9924719d92b3c398b6245865a2e647cb8326f7443300b64736f6c634300060c0033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220484070970d5ee6b766f9924719d92b3c398b6245865a2e647cb8326f7443300b64736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/truffle/defiplus/contracts/libraries/Address.sol\":\"Address\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/truffle/defiplus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202463b5a67db3ddf91382b743e25db1f897a9d717e61875b0b62263b8104c230464736f6c634300060c0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202463b5a67db3ddf91382b743e25db1f897a9d717e61875b0b62263b8104c230464736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "61:913:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "61:913:5:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.12;\r\n\r\nlibrary Address {\r\n    function isContract(address account) internal view returns (bool) {\r\n        bytes32 codehash;\r\n        bytes32 accountHash = 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;\r\n        // solhint-disable-next-line no-inline-assembly\r\n        assembly { codehash := extcodehash(account) }\r\n        return (codehash != 0x0 && codehash != accountHash);\r\n    }\r\n    function toPayable(address account) internal pure returns (address payable) {\r\n        return address(uint160(account));\r\n    }\r\n    function sendValue(address payable recipient, uint256 amount) internal {\r\n        require(address(this).balance >= amount, \"Address: insufficient balance\");\r\n\r\n        // solhint-disable-next-line avoid-call-value\r\n        (bool success, ) = recipient.call{ value: amount }(\"\");\r\n        require(success, \"Address: unable to send value, recipient may have reverted\");\r\n    }\r\n}",
-  "sourcePath": "D:\\mzdata\\DeFiPlus\\contracts\\libraries\\Address.sol",
+  "sourcePath": "E:\\truffle\\defiplus\\contracts\\libraries\\Address.sol",
   "ast": {
-    "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Address.sol",
+    "absolutePath": "/E/truffle/defiplus/contracts/libraries/Address.sol",
     "exportedSymbols": {
       "Address": [
         856
@@ -1139,7 +1139,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Address.sol",
+      "absolutePath": "/E/truffle/defiplus/contracts/libraries/Address.sol",
       "exportedSymbols": {
         "Address": [
           856
@@ -2312,8 +2312,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-04T09:49:48.068Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-06T07:47:03.301Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

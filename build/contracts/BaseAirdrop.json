@@ -71,16 +71,16 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"clearAssets\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"clearToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"governance\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_governance\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_receiveInfo\",\"type\":\"bytes32\"}],\"name\":\"setReceiveInfo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/mzdata/DeFiPlus/contracts/airdrop/BaseAirdrop.sol\":\"BaseAirdrop\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/mzdata/DeFiPlus/contracts/airdrop/BaseAirdrop.sol\":{\"keccak256\":\"0x634d85dcf24b0c874fe211ef580b74df6a93558167997e38bad01a8653bcac27\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cf38d96168e0320f18eee929437afc6b60a187eb3e1cb787656a8f501549f809\",\"dweb:/ipfs/QmW9QAz41ve3r2ArwT6fbuhyv4tTP2NebckkX5PegKN4Nn\"]},\"/D/mzdata/DeFiPlus/contracts/interface/IERC20.sol\":{\"keccak256\":\"0xf8d2ab6f7b8ab550739dada8b9411e214a63642aaf2c99387a1d7efedaa6e05c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8a648fd591f5e3af5279e23e3f369f05208421ca839e7fdfa4c27eba9ea6939\",\"dweb:/ipfs/Qme8t6z8ete9SxnD4sXF5sSuZ7cBJkgV5cfKBPxCDTs8iT\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol\":{\"keccak256\":\"0x3565faaa97824ade21ef0e5ed327b46272ceea03d57d96e31006e24754ebba2f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://875c8df9fc666b858c52ca4d562f67590bca6a153cad4bc15c3bf46b951d3eb0\",\"dweb:/ipfs/QmckcF6QTJJNjJzcYyuv3tTpc6FbtoPpoFz6H1i7RbvSHg\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/SafeMath.sol\":{\"keccak256\":\"0xa53acebe1fd8a0252ba1f6154b43e93139db5ae46dc4038052e7a78a9a50a185\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20c0a5b50dfcb5590c8e97655b5a679447f9af557af6a58366977f380ade78bd\",\"dweb:/ipfs/QmdxHYHnBbgsdrd7cwBcufXmWcHivNE1emrXvXyjYxTpHE\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"clearAssets\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"clearToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"governance\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_governance\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_receiveInfo\",\"type\":\"bytes32\"}],\"name\":\"setReceiveInfo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/truffle/defiplus/contracts/airdrop/BaseAirdrop.sol\":\"BaseAirdrop\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/truffle/defiplus/contracts/airdrop/BaseAirdrop.sol\":{\"keccak256\":\"0x634d85dcf24b0c874fe211ef580b74df6a93558167997e38bad01a8653bcac27\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cf38d96168e0320f18eee929437afc6b60a187eb3e1cb787656a8f501549f809\",\"dweb:/ipfs/QmW9QAz41ve3r2ArwT6fbuhyv4tTP2NebckkX5PegKN4Nn\"]},\"/E/truffle/defiplus/contracts/interface/IERC20.sol\":{\"keccak256\":\"0xf8d2ab6f7b8ab550739dada8b9411e214a63642aaf2c99387a1d7efedaa6e05c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8a648fd591f5e3af5279e23e3f369f05208421ca839e7fdfa4c27eba9ea6939\",\"dweb:/ipfs/Qme8t6z8ete9SxnD4sXF5sSuZ7cBJkgV5cfKBPxCDTs8iT\"]},\"/E/truffle/defiplus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]},\"/E/truffle/defiplus/contracts/libraries/SafeERC20.sol\":{\"keccak256\":\"0x3565faaa97824ade21ef0e5ed327b46272ceea03d57d96e31006e24754ebba2f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://875c8df9fc666b858c52ca4d562f67590bca6a153cad4bc15c3bf46b951d3eb0\",\"dweb:/ipfs/QmckcF6QTJJNjJzcYyuv3tTpc6FbtoPpoFz6H1i7RbvSHg\"]},\"/E/truffle/defiplus/contracts/libraries/SafeMath.sol\":{\"keccak256\":\"0xa53acebe1fd8a0252ba1f6154b43e93139db5ae46dc4038052e7a78a9a50a185\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20c0a5b50dfcb5590c8e97655b5a679447f9af557af6a58366977f380ade78bd\",\"dweb:/ipfs/QmdxHYHnBbgsdrd7cwBcufXmWcHivNE1emrXvXyjYxTpHE\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.12;\r\n\r\nimport \"../libraries/SafeERC20.sol\";\r\n\r\ninterface IController {\r\n    function operators(address operator) external view returns(bool);\r\n}\r\n\r\nabstract contract BaseAirdrop {\r\n\r\n    using SafeERC20 for IERC20;\r\n    using SafeMath for uint;\r\n\r\n    address public governance;\r\n\r\n    constructor () public {\r\n      governance = msg.sender;\r\n    }\r\n\r\n    function setReceiveInfo(address _token, bytes32 _receiveInfo) external virtual;\r\n\r\n    function setGovernance(address _governance) external {\r\n      require(msg.sender == governance, \"!governance\");\r\n      governance = _governance;\r\n    }\r\n\r\n    function clearAssets() external {\r\n        require(msg.sender == governance, \"!governance\");\r\n        uint balance = address(this).balance;\r\n        payable(governance).transfer(balance);\r\n    }\r\n\r\n    function clearToken(address _token) external {\r\n        require(msg.sender == governance, \"!governance\");\r\n        IERC20 token = IERC20(_token);\r\n        uint balance = token.balanceOf(address(this));\r\n        token.safeTransfer(governance, balance);\r\n    }\r\n    \r\n}",
-  "sourcePath": "D:\\mzdata\\DeFiPlus\\contracts\\airdrop\\BaseAirdrop.sol",
+  "sourcePath": "E:\\truffle\\defiplus\\contracts\\airdrop\\BaseAirdrop.sol",
   "ast": {
-    "absolutePath": "/D/mzdata/DeFiPlus/contracts/airdrop/BaseAirdrop.sol",
+    "absolutePath": "/E/truffle/defiplus/contracts/airdrop/BaseAirdrop.sol",
     "exportedSymbols": {
       "BaseAirdrop": [
         155
@@ -105,7 +105,7 @@
         "src": "33:24:1"
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeERC20.sol",
         "file": "../libraries/SafeERC20.sol",
         "id": 39,
         "nodeType": "ImportDirective",
@@ -1673,7 +1673,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/D/mzdata/DeFiPlus/contracts/airdrop/BaseAirdrop.sol",
+      "absolutePath": "/E/truffle/defiplus/contracts/airdrop/BaseAirdrop.sol",
       "exportedSymbols": {
         "BaseAirdrop": [
           155
@@ -1701,7 +1701,7 @@
       {
         "attributes": {
           "SourceUnit": 1156,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeERC20.sol",
           "file": "../libraries/SafeERC20.sol",
           "scope": 156,
           "symbolAliases": [
@@ -3432,8 +3432,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-04T09:49:48.058Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-06T07:47:03.243Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

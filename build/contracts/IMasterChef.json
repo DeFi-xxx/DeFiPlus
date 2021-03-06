@@ -26,27 +26,27 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lpToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_rewardToken\",\"type\":\"address\"}],\"name\":\"getAllocation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/mzdata/DeFiPlus/contracts/mine/interface/IMasterChef.sol\":\"IMasterChef\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/mzdata/DeFiPlus/contracts/mine/interface/IMasterChef.sol\":{\"keccak256\":\"0xac163af93abc4ee56bc46bad38acf58af41776032d0f027216ee0f3c449ebdff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2733989b5cfdf160a59bad8eb1786a188ff5900ef209aee4fc0ac179b8f96ec5\",\"dweb:/ipfs/QmRP5t1YHErwvEHbyuSW9gc1mCKj66dBRDGCn3pAmeNG3S\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_lpToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_rewardToken\",\"type\":\"address\"}],\"name\":\"getAllocation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/truffle/defiplus/contracts/mine/interface/IMasterChef.sol\":\"IMasterChef\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/truffle/defiplus/contracts/mine/interface/IMasterChef.sol\":{\"keccak256\":\"0xac163af93abc4ee56bc46bad38acf58af41776032d0f027216ee0f3c449ebdff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2733989b5cfdf160a59bad8eb1786a188ff5900ef209aee4fc0ac179b8f96ec5\",\"dweb:/ipfs/QmRP5t1YHErwvEHbyuSW9gc1mCKj66dBRDGCn3pAmeNG3S\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.12;\r\n\r\ninterface IMasterChef {\r\n    function getAllocation(address _lpToken, address _rewardToken) external view returns(address);\r\n}",
-  "sourcePath": "D:\\mzdata\\DeFiPlus\\contracts\\mine\\interface\\IMasterChef.sol",
+  "sourcePath": "E:\\truffle\\defiplus\\contracts\\mine\\interface\\IMasterChef.sol",
   "ast": {
-    "absolutePath": "/D/mzdata/DeFiPlus/contracts/mine/interface/IMasterChef.sol",
+    "absolutePath": "/E/truffle/defiplus/contracts/mine/interface/IMasterChef.sol",
     "exportedSymbols": {
       "IMasterChef": [
-        2430
+        2446
       ]
     },
-    "id": 2431,
+    "id": 2447,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2420,
+        "id": 2436,
         "literals": [
           "solidity",
           "^",
@@ -63,9 +63,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2430,
+        "id": 2446,
         "linearizedBaseContracts": [
-          2430
+          2446
         ],
         "name": "IMasterChef",
         "nodeType": "ContractDefinition",
@@ -74,7 +74,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "a6d945cc",
-            "id": 2429,
+            "id": 2445,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -82,17 +82,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 2425,
+              "id": 2441,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2422,
+                  "id": 2438,
                   "mutability": "mutable",
                   "name": "_lpToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2429,
+                  "scope": 2445,
                   "src": "113:16:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -101,7 +101,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2421,
+                    "id": 2437,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "113:7:12",
@@ -116,12 +116,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 2424,
+                  "id": 2440,
                   "mutability": "mutable",
                   "name": "_rewardToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2429,
+                  "scope": 2445,
                   "src": "131:20:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -130,7 +130,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2423,
+                    "id": 2439,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "131:7:12",
@@ -147,17 +147,17 @@
               "src": "112:40:12"
             },
             "returnParameters": {
-              "id": 2428,
+              "id": 2444,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2427,
+                  "id": 2443,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 2429,
+                  "scope": 2445,
                   "src": "175:7:12",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -166,7 +166,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2426,
+                    "id": 2442,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "175:7:12",
@@ -182,14 +182,14 @@
               ],
               "src": "174:9:12"
             },
-            "scope": 2430,
+            "scope": 2446,
             "src": "90:94:12",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 2431,
+        "scope": 2447,
         "src": "61:126:12"
       }
     ],
@@ -197,10 +197,10 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/D/mzdata/DeFiPlus/contracts/mine/interface/IMasterChef.sol",
+      "absolutePath": "/E/truffle/defiplus/contracts/mine/interface/IMasterChef.sol",
       "exportedSymbols": {
         "IMasterChef": [
-          2430
+          2446
         ]
       },
       "license": "MIT"
@@ -215,7 +215,7 @@
             ".12"
           ]
         },
-        "id": 2420,
+        "id": 2436,
         "name": "PragmaDirective",
         "src": "33:24:12"
       },
@@ -232,10 +232,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            2430
+            2446
           ],
           "name": "IMasterChef",
-          "scope": 2431
+          "scope": 2447
         },
         "children": [
           {
@@ -251,7 +251,7 @@
               ],
               "name": "getAllocation",
               "overrides": null,
-              "scope": 2430,
+              "scope": 2446,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -265,7 +265,7 @@
                       "mutability": "mutable",
                       "name": "_lpToken",
                       "overrides": null,
-                      "scope": 2429,
+                      "scope": 2445,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -279,12 +279,12 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2421,
+                        "id": 2437,
                         "name": "ElementaryTypeName",
                         "src": "113:7:12"
                       }
                     ],
-                    "id": 2422,
+                    "id": 2438,
                     "name": "VariableDeclaration",
                     "src": "113:16:12"
                   },
@@ -294,7 +294,7 @@
                       "mutability": "mutable",
                       "name": "_rewardToken",
                       "overrides": null,
-                      "scope": 2429,
+                      "scope": 2445,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -308,17 +308,17 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2423,
+                        "id": 2439,
                         "name": "ElementaryTypeName",
                         "src": "131:7:12"
                       }
                     ],
-                    "id": 2424,
+                    "id": 2440,
                     "name": "VariableDeclaration",
                     "src": "131:20:12"
                   }
                 ],
-                "id": 2425,
+                "id": 2441,
                 "name": "ParameterList",
                 "src": "112:40:12"
               },
@@ -330,7 +330,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 2429,
+                      "scope": 2445,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -344,32 +344,32 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 2426,
+                        "id": 2442,
                         "name": "ElementaryTypeName",
                         "src": "175:7:12"
                       }
                     ],
-                    "id": 2427,
+                    "id": 2443,
                     "name": "VariableDeclaration",
                     "src": "175:7:12"
                   }
                 ],
-                "id": 2428,
+                "id": 2444,
                 "name": "ParameterList",
                 "src": "174:9:12"
               }
             ],
-            "id": 2429,
+            "id": 2445,
             "name": "FunctionDefinition",
             "src": "90:94:12"
           }
         ],
-        "id": 2430,
+        "id": 2446,
         "name": "ContractDefinition",
         "src": "61:126:12"
       }
     ],
-    "id": 2431,
+    "id": 2447,
     "name": "SourceUnit",
     "src": "33:154:12"
   },
@@ -378,8 +378,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-04T09:49:48.159Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-06T07:47:03.407Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

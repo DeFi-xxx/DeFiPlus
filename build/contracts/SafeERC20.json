@@ -1,16 +1,16 @@
 {
   "contractName": "SafeERC20",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol\":\"SafeERC20\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/mzdata/DeFiPlus/contracts/interface/IERC20.sol\":{\"keccak256\":\"0xf8d2ab6f7b8ab550739dada8b9411e214a63642aaf2c99387a1d7efedaa6e05c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8a648fd591f5e3af5279e23e3f369f05208421ca839e7fdfa4c27eba9ea6939\",\"dweb:/ipfs/Qme8t6z8ete9SxnD4sXF5sSuZ7cBJkgV5cfKBPxCDTs8iT\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol\":{\"keccak256\":\"0x3565faaa97824ade21ef0e5ed327b46272ceea03d57d96e31006e24754ebba2f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://875c8df9fc666b858c52ca4d562f67590bca6a153cad4bc15c3bf46b951d3eb0\",\"dweb:/ipfs/QmckcF6QTJJNjJzcYyuv3tTpc6FbtoPpoFz6H1i7RbvSHg\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/SafeMath.sol\":{\"keccak256\":\"0xa53acebe1fd8a0252ba1f6154b43e93139db5ae46dc4038052e7a78a9a50a185\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20c0a5b50dfcb5590c8e97655b5a679447f9af557af6a58366977f380ade78bd\",\"dweb:/ipfs/QmdxHYHnBbgsdrd7cwBcufXmWcHivNE1emrXvXyjYxTpHE\"]}},\"version\":1}",
-  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220db77e02806fc90f242ae4602eb14f52b8b0452b1cb55393d3159ecc6c6c8cc8c64736f6c634300060c0033",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220db77e02806fc90f242ae4602eb14f52b8b0452b1cb55393d3159ecc6c6c8cc8c64736f6c634300060c0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/truffle/defiplus/contracts/libraries/SafeERC20.sol\":\"SafeERC20\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/truffle/defiplus/contracts/interface/IERC20.sol\":{\"keccak256\":\"0xf8d2ab6f7b8ab550739dada8b9411e214a63642aaf2c99387a1d7efedaa6e05c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8a648fd591f5e3af5279e23e3f369f05208421ca839e7fdfa4c27eba9ea6939\",\"dweb:/ipfs/Qme8t6z8ete9SxnD4sXF5sSuZ7cBJkgV5cfKBPxCDTs8iT\"]},\"/E/truffle/defiplus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]},\"/E/truffle/defiplus/contracts/libraries/SafeERC20.sol\":{\"keccak256\":\"0x3565faaa97824ade21ef0e5ed327b46272ceea03d57d96e31006e24754ebba2f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://875c8df9fc666b858c52ca4d562f67590bca6a153cad4bc15c3bf46b951d3eb0\",\"dweb:/ipfs/QmckcF6QTJJNjJzcYyuv3tTpc6FbtoPpoFz6H1i7RbvSHg\"]},\"/E/truffle/defiplus/contracts/libraries/SafeMath.sol\":{\"keccak256\":\"0xa53acebe1fd8a0252ba1f6154b43e93139db5ae46dc4038052e7a78a9a50a185\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20c0a5b50dfcb5590c8e97655b5a679447f9af557af6a58366977f380ade78bd\",\"dweb:/ipfs/QmdxHYHnBbgsdrd7cwBcufXmWcHivNE1emrXvXyjYxTpHE\"]}},\"version\":1}",
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122060288a33e7f764d8d934c3f4eddc6938f4cdd64855fd1f69fcf04267f3eea5f464736f6c634300060c0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122060288a33e7f764d8d934c3f4eddc6938f4cdd64855fd1f69fcf04267f3eea5f464736f6c634300060c0033",
   "immutableReferences": {},
   "sourceMap": "149:2073:7:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "149:2073:7:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.12;\r\n\r\nimport \"./SafeMath.sol\";\r\nimport \"./Address.sol\";\r\nimport \"../interface/IERC20.sol\";\r\n\r\nlibrary SafeERC20 {\r\n    using SafeMath for uint256;\r\n    using Address for address;\r\n\r\n    function safeTransfer(IERC20 token, address to, uint256 value) internal {\r\n        callOptionalReturn(token, abi.encodeWithSelector(token.transfer.selector, to, value));\r\n    }\r\n\r\n    function safeTransferFrom(IERC20 token, address from, address to, uint256 value) internal {\r\n        callOptionalReturn(token, abi.encodeWithSelector(token.transferFrom.selector, from, to, value));\r\n    }\r\n\r\n    function safeApprove(IERC20 token, address spender, uint256 value) internal {\r\n        require((value == 0) || (token.allowance(address(this), spender) == 0),\r\n            \"SafeERC20: approve from non-zero to non-zero allowance\"\r\n        );\r\n        callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, value));\r\n    }\r\n\r\n    function safeIncreaseAllowance(IERC20 token, address spender, uint256 value) internal {\r\n        uint256 newAllowance = token.allowance(address(this), spender).add(value);\r\n        callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));\r\n    }\r\n\r\n    function safeDecreaseAllowance(IERC20 token, address spender, uint256 value) internal {\r\n        uint256 newAllowance = token.allowance(address(this), spender).sub(value, \"SafeERC20: decreased allowance below zero\");\r\n        callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));\r\n    }\r\n    function callOptionalReturn(IERC20 token, bytes memory data) private {\r\n        require(address(token).isContract(), \"SafeERC20: call to non-contract\");\r\n\r\n        // solhint-disable-next-line avoid-low-level-calls\r\n        (bool success, bytes memory returndata) = address(token).call(data);\r\n        require(success, \"SafeERC20: low-level call failed\");\r\n\r\n        if (returndata.length > 0) { // Return data is optional\r\n            // solhint-disable-next-line max-line-length\r\n            require(abi.decode(returndata, (bool)), \"SafeERC20: ERC20 operation did not succeed\");\r\n        }\r\n    }\r\n}",
-  "sourcePath": "D:\\mzdata\\DeFiPlus\\contracts\\libraries\\SafeERC20.sol",
+  "sourcePath": "E:\\truffle\\defiplus\\contracts\\libraries\\SafeERC20.sol",
   "ast": {
-    "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol",
+    "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeERC20.sol",
     "exportedSymbols": {
       "SafeERC20": [
         1155
@@ -32,7 +32,7 @@
         "src": "33:24:7"
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeMath.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeMath.sol",
         "file": "./SafeMath.sol",
         "id": 932,
         "nodeType": "ImportDirective",
@@ -43,7 +43,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Address.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/libraries/Address.sol",
         "file": "./Address.sol",
         "id": 933,
         "nodeType": "ImportDirective",
@@ -54,7 +54,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/interface/IERC20.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/interface/IERC20.sol",
         "file": "../interface/IERC20.sol",
         "id": 934,
         "nodeType": "ImportDirective",
@@ -3330,7 +3330,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol",
+      "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeERC20.sol",
       "exportedSymbols": {
         "SafeERC20": [
           1155
@@ -3355,7 +3355,7 @@
       {
         "attributes": {
           "SourceUnit": 1343,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeMath.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeMath.sol",
           "file": "./SafeMath.sol",
           "scope": 1156,
           "symbolAliases": [
@@ -3370,7 +3370,7 @@
       {
         "attributes": {
           "SourceUnit": 857,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Address.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/libraries/Address.sol",
           "file": "./Address.sol",
           "scope": 1156,
           "symbolAliases": [
@@ -3385,7 +3385,7 @@
       {
         "attributes": {
           "SourceUnit": 780,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/interface/IERC20.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/interface/IERC20.sol",
           "file": "../interface/IERC20.sol",
           "scope": 1156,
           "symbolAliases": [
@@ -6897,8 +6897,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-04T09:49:48.075Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-06T07:47:03.314Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

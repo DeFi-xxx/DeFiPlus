@@ -9,7 +9,7 @@ contract ManualAirdrop is BaseAirdrop {
 
     address public controller;
 
-    address WHT = 0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F;
+    address WBNB = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c;
 
     mapping(address => bytes32) receiveInfoMap;
 
@@ -30,7 +30,7 @@ contract ManualAirdrop is BaseAirdrop {
         bytes32 receiveInfo = keccak256(abi.encode(_token, _value));
         require(receiveInfoMap[_token] == receiveInfo && !claimedMap[msg.sender][receiveInfo], "claims");
         claimedMap[msg.sender][receiveInfo] = true;
-        if(_token != WHT) {
+        if(_token != WBNB) {
             IERC20 token = IERC20(_token);
             token.safeTransferFrom( msg.sender, msg.sender, _value);
         } else {

@@ -117,16 +117,16 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_lpToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"_rewardToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_rewardAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_startTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_duration\",\"type\":\"uint256\"}],\"name\":\"add\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"}],\"name\":\"exit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"}],\"name\":\"getReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/mzdata/DeFiPlus/contracts/mine/MasterChef.sol\":\"IAllocation\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/mzdata/DeFiPlus/contracts/interface/IERC20.sol\":{\"keccak256\":\"0xf8d2ab6f7b8ab550739dada8b9411e214a63642aaf2c99387a1d7efedaa6e05c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8a648fd591f5e3af5279e23e3f369f05208421ca839e7fdfa4c27eba9ea6939\",\"dweb:/ipfs/Qme8t6z8ete9SxnD4sXF5sSuZ7cBJkgV5cfKBPxCDTs8iT\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/Math.sol\":{\"keccak256\":\"0x9a52c73ace8b1abea2b750b1a2a0b7c7fd2f2b7a0e22e06bb2403afff811179e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://323eb5a74ef5f32a2852f2e9c8dd6e4bb8a24fe81d0ecd219c351b8408e7c03e\",\"dweb:/ipfs/QmSPU2WbqGe1F7jkp4jpzjxw16dfqojQLP8r9DFHAHw8QA\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol\":{\"keccak256\":\"0x3565faaa97824ade21ef0e5ed327b46272ceea03d57d96e31006e24754ebba2f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://875c8df9fc666b858c52ca4d562f67590bca6a153cad4bc15c3bf46b951d3eb0\",\"dweb:/ipfs/QmckcF6QTJJNjJzcYyuv3tTpc6FbtoPpoFz6H1i7RbvSHg\"]},\"/D/mzdata/DeFiPlus/contracts/libraries/SafeMath.sol\":{\"keccak256\":\"0xa53acebe1fd8a0252ba1f6154b43e93139db5ae46dc4038052e7a78a9a50a185\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20c0a5b50dfcb5590c8e97655b5a679447f9af557af6a58366977f380ade78bd\",\"dweb:/ipfs/QmdxHYHnBbgsdrd7cwBcufXmWcHivNE1emrXvXyjYxTpHE\"]},\"/D/mzdata/DeFiPlus/contracts/mine/MasterChef.sol\":{\"keccak256\":\"0x7233ff6fb00c8d9f05d2308f40aefe56f0073ee575edfc3c0b3ae95fe78ced7a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cf582ab017dfd2f04daeb428530c487d1f0419f6a49ee78844a0a48ff243c563\",\"dweb:/ipfs/QmPfPicrWu11UQE4hVb2h6MDQeK4AnAWL4g3EuFPLhCwsK\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_lpToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"_rewardToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_rewardAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_startTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_duration\",\"type\":\"uint256\"}],\"name\":\"add\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"}],\"name\":\"exit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"}],\"name\":\"getReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_hash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/E/truffle/defiplus/contracts/mine/MasterChef.sol\":\"IAllocation\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/E/truffle/defiplus/contracts/interface/IERC20.sol\":{\"keccak256\":\"0xf8d2ab6f7b8ab550739dada8b9411e214a63642aaf2c99387a1d7efedaa6e05c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a8a648fd591f5e3af5279e23e3f369f05208421ca839e7fdfa4c27eba9ea6939\",\"dweb:/ipfs/Qme8t6z8ete9SxnD4sXF5sSuZ7cBJkgV5cfKBPxCDTs8iT\"]},\"/E/truffle/defiplus/contracts/libraries/Address.sol\":{\"keccak256\":\"0x1979e39387e05192d5b612cba47537ea38ec2b5506b8cfbd52dd49f93977a8c6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://49c77cb2b7136177f532daca72ce7f67840b1fcb8f249e27727ca9b919056cff\",\"dweb:/ipfs/QmXmCXLAMNtdPHFhtwRqUwnEXkWCn5hYEAGpF8KSUcAiGw\"]},\"/E/truffle/defiplus/contracts/libraries/Math.sol\":{\"keccak256\":\"0x9a52c73ace8b1abea2b750b1a2a0b7c7fd2f2b7a0e22e06bb2403afff811179e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://323eb5a74ef5f32a2852f2e9c8dd6e4bb8a24fe81d0ecd219c351b8408e7c03e\",\"dweb:/ipfs/QmSPU2WbqGe1F7jkp4jpzjxw16dfqojQLP8r9DFHAHw8QA\"]},\"/E/truffle/defiplus/contracts/libraries/SafeERC20.sol\":{\"keccak256\":\"0x3565faaa97824ade21ef0e5ed327b46272ceea03d57d96e31006e24754ebba2f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://875c8df9fc666b858c52ca4d562f67590bca6a153cad4bc15c3bf46b951d3eb0\",\"dweb:/ipfs/QmckcF6QTJJNjJzcYyuv3tTpc6FbtoPpoFz6H1i7RbvSHg\"]},\"/E/truffle/defiplus/contracts/libraries/SafeMath.sol\":{\"keccak256\":\"0xa53acebe1fd8a0252ba1f6154b43e93139db5ae46dc4038052e7a78a9a50a185\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://20c0a5b50dfcb5590c8e97655b5a679447f9af557af6a58366977f380ade78bd\",\"dweb:/ipfs/QmdxHYHnBbgsdrd7cwBcufXmWcHivNE1emrXvXyjYxTpHE\"]},\"/E/truffle/defiplus/contracts/mine/MasterChef.sol\":{\"keccak256\":\"0x7233ff6fb00c8d9f05d2308f40aefe56f0073ee575edfc3c0b3ae95fe78ced7a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cf582ab017dfd2f04daeb428530c487d1f0419f6a49ee78844a0a48ff243c563\",\"dweb:/ipfs/QmPfPicrWu11UQE4hVb2h6MDQeK4AnAWL4g3EuFPLhCwsK\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.0;\r\n\r\nimport \"../interface/IERC20.sol\";\r\nimport \"../libraries/Math.sol\";\r\nimport \"../libraries/SafeMath.sol\";\r\nimport \"../libraries/Address.sol\";\r\nimport \"../libraries/SafeERC20.sol\";\r\n\r\ninterface IAllocation {\r\n    function add(IERC20 _lpToken, IERC20 _rewardToken, uint _rewardAmount, uint _startTime, uint _duration) external;\r\n\r\n    function stake(address _account, uint _amount, bytes32 _hash) external;\r\n\r\n    function getReward(address _account, bytes32 _hash) external;\r\n\r\n    function withdraw(address _account, bytes32 _hash, uint _amount) external;\r\n\r\n    function exit(address _account, bytes32 _hash) external;\r\n}\r\n\r\ncontract MasterChef {\r\n    using SafeMath for uint256;\r\n    using SafeERC20 for IERC20;\r\n\r\n    // 治理地址\r\n    address public governance;\r\n\r\n    mapping(bytes32 => address) public allocations;\r\n\r\n    constructor() public {\r\n        governance = msg.sender;\r\n    }\r\n\r\n    function getAllocation(address _lpToken, address _rewardToken) public view returns(address) {\r\n        bytes32 _hash = keccak256(abi.encode(_lpToken, _rewardToken));\r\n        return allocations[_hash];\r\n    }\r\n\r\n    function setAllocation(address _lpToken, address _rewardToken, address _allocation) internal {\r\n        bytes32 _hash = keccak256(abi.encode(_lpToken, _rewardToken));\r\n        allocations[_hash] = _allocation;\r\n    }\r\n}\r\n",
-  "sourcePath": "D:/mzdata/DeFiPlus/contracts/mine/MasterChef.sol",
+  "sourcePath": "E:/truffle/defiplus/contracts/mine/MasterChef.sol",
   "ast": {
-    "absolutePath": "/D/mzdata/DeFiPlus/contracts/mine/MasterChef.sol",
+    "absolutePath": "/E/truffle/defiplus/contracts/mine/MasterChef.sol",
     "exportedSymbols": {
       "IAllocation": [
         1395
@@ -151,7 +151,7 @@
         "src": "33:23:9"
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/interface/IERC20.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/interface/IERC20.sol",
         "file": "../interface/IERC20.sol",
         "id": 1345,
         "nodeType": "ImportDirective",
@@ -162,7 +162,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Math.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/libraries/Math.sol",
         "file": "../libraries/Math.sol",
         "id": 1346,
         "nodeType": "ImportDirective",
@@ -173,7 +173,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeMath.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeMath.sol",
         "file": "../libraries/SafeMath.sol",
         "id": 1347,
         "nodeType": "ImportDirective",
@@ -184,7 +184,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Address.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/libraries/Address.sol",
         "file": "../libraries/Address.sol",
         "id": 1348,
         "nodeType": "ImportDirective",
@@ -195,7 +195,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol",
+        "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeERC20.sol",
         "file": "../libraries/SafeERC20.sol",
         "id": 1349,
         "nodeType": "ImportDirective",
@@ -1736,7 +1736,7 @@
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/D/mzdata/DeFiPlus/contracts/mine/MasterChef.sol",
+      "absolutePath": "/E/truffle/defiplus/contracts/mine/MasterChef.sol",
       "exportedSymbols": {
         "IAllocation": [
           1395
@@ -1764,7 +1764,7 @@
       {
         "attributes": {
           "SourceUnit": 780,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/interface/IERC20.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/interface/IERC20.sol",
           "file": "../interface/IERC20.sol",
           "scope": 1468,
           "symbolAliases": [
@@ -1779,7 +1779,7 @@
       {
         "attributes": {
           "SourceUnit": 930,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Math.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/libraries/Math.sol",
           "file": "../libraries/Math.sol",
           "scope": 1468,
           "symbolAliases": [
@@ -1794,7 +1794,7 @@
       {
         "attributes": {
           "SourceUnit": 1343,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeMath.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeMath.sol",
           "file": "../libraries/SafeMath.sol",
           "scope": 1468,
           "symbolAliases": [
@@ -1809,7 +1809,7 @@
       {
         "attributes": {
           "SourceUnit": 857,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/Address.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/libraries/Address.sol",
           "file": "../libraries/Address.sol",
           "scope": 1468,
           "symbolAliases": [
@@ -1824,7 +1824,7 @@
       {
         "attributes": {
           "SourceUnit": 1156,
-          "absolutePath": "/D/mzdata/DeFiPlus/contracts/libraries/SafeERC20.sol",
+          "absolutePath": "/E/truffle/defiplus/contracts/libraries/SafeERC20.sol",
           "file": "../libraries/SafeERC20.sol",
           "scope": 1468,
           "symbolAliases": [
@@ -3522,8 +3522,8 @@
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-04T09:36:51.264Z",
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-03-06T07:47:03.337Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
