@@ -4,52 +4,29 @@
             <div class="rightPage" @click="toPage()">
                 我是项目方
             </div>
-            <div class="promiseBox">
-                <div class="hsize">HTCube</div>
-                <div class="text">Token合约地址：0xxxxxxxxx</div>
-                <div class="text">项目信息：叭叭叭叭了个叭叭</div>
-                <div class="text">空投方式：按账号余额排名，取Top1000</div>
-            </div>
-            <div class="chosen" @click="submit()">收起挖矿</div>
-        </div>
-        <div class="box">
-            <div class="top">
-                <div class="item">
-                    <div>0.000000</div>
-                    <div>收入代币</div>
-                </div>
-                <div class="item">
-                    <div style="color: #00E3B6">0.000000</div>
-                    <div>取得收益</div>
-                </div>
-            </div>
-            <div class="btn">授权</div>
         </div>
         <div class="line"></div>
         <div class="promise">
             <div class="promiseBox">
-                <div class="hsize">HTCube</div>
+                <div class="hsize">XXX</div>
                 <div class="text">Token合约地址：0xxxxxxxxx</div>
-                <div class="text">项目信息：叭叭叭叭了个叭叭</div>
-                <div class="text">空投方式：按账号余额排名，取Top1000</div>
             </div>
-            <div class="chosen" @click="submit()">收起挖矿</div>
         </div>
         <div class="box">
             <div class="top">
                 <div class="item">
                     <div>0.000000</div>
-                    <div>收入代币</div>
+                    <div>存入信息</div>
                 </div>
                 <div class="item">
                     <div style="color: #00E3B6">0.000000</div>
-                    <div>取得收益</div>
+                    <div>收益信息</div>
                 </div>
             </div>
             <div class="btns">
                 <div class="btn">存入</div>
-                <div class="btn">取收益</div>
-                <div class="btn">全部取出</div>
+                <div class="btn">领取</div>
+                <div class="btn">退出</div>
             </div>
 
         </div>

@@ -25,7 +25,7 @@
                 <h2 style="color: #19223E;text-align: left;font-size: 16px;">参数</h2>
                 <div class="dayPost" v-if="mineWay == 1">
                     <span>挖矿持续时间:</span>
-                    <input  placeholder="天数"  id="everyProduct"  />
+                    <input  placeholder="天数"  id="everyProduct" v-model="duration"  />
                 </div>
 
                 <div class="dayPost" v-else>
@@ -34,7 +34,8 @@
                     <span>总量：100</span>
                 </div>
 
-                <div class="chosen" @click="submit()">授权</div>
+                <div class="chosen" @click="submit1()">授权</div>
+                <div class="chosen" @click="submit2()">添加</div>
             </div>
         </div>
     </div>
@@ -46,6 +47,7 @@
 import { ethers } from 'ethers';
 import Web3 from "web3";
 import IERC20 from "../../../build/contracts/IERC20.json";
+import Allocation1 from "../../../build/contracts/FirstAllocation.json";
 const provider = new ethers.providers.Web3Provider(web3.currentProvider);
 const signer = provider.getSigner();
 
@@ -54,10 +56,11 @@ const signer = provider.getSigner();
         data(){
             return{
                 web3: null,
-                stakeToken: "",
-                rewardToken: "0x337610d27c682e347c9cd60bd4b3b107c9d34ddd",
-                rewardAmount: 0,
-                startTime: 0,
+                stakeToken: "0x3bFcbe8fd80467750963Ec9b7A1C74cFC4d7fC80",
+                rewardToken: "0x3bFcbe8fd80467750963Ec9b7A1C74cFC4d7fC80",
+                rewardAmount: 10000e18,
+                startTime: 1,
+                duration: 10,
                 firstAllocation: "0x1acb54865e710c6cf8522582de51074d7dE33339",
                 secondAllocation: "0x0E02a99F18c476a42e73F731228f25948Aaea155",
                 mineWay: 1,
@@ -81,16 +84,32 @@ const signer = provider.getSigner();
             window.web3 = this.web3;
         },
         methods:{
-            async submit(){
+            async submit1(){
                 let contract = new ethers.Contract(this.rewardToken, IERC20.abi, provider);
-                let totalSupply = await contract.totalSupply();
+                // let totalSupply = await contract.totalSupply();
                 
-                totalSupply = this.web3.utils.hexToNumberString(totalSupply._hex);
-                console.log(totalSupply);
+                // totalSupply = this.web3.utils.hexToNumberString(totalSupply._hex);
+                // console.log(totalSupply);
                 let contractWithSigner = contract.connect(signer);
-                let result = await contractWithSigner.approve(this.firstAllocation, this.web3.utils.numberToHex(10e18));
+                let result = await contractWithSigner.approve(this.firstAllocation, this.web3.utils.numberToHex(this.rewardAmount));
                 console.log(result);
-
+            },
+            async submit2(){
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                if(this.mineWay == 1) {
+                    let time = this.duration * 24 * 60 * 60;
+                    console.log(allocationContractWithSigner);
+                    console.log(time);
+                    let alocationResult = await allocationContractwithSigner.add(this.stakeToken, this.rewardToken, numberToHex(this.rewardAmount), numberToHex(this.startTime), numberToHex(time));
+                //     console.log(alocationResult);
+                // console.log(1)
+                } else {
+                    
+                }
+            },
+            numberToHex(num) {
+                return this.web3.utils.numberToHex(num);
             },
             toPage(){
                 this.$router.push('/digProjecter')
@@ -126,11 +145,12 @@ const signer = provider.getSigner();
         width: 300px;
         height:31px;
         border: 1px solid #E8EDF0;
-        color: white;
+        color: black;
         font-family: PingFang SC;
         font-weight: bold;
         clear: both;
         margin: 20px 20px;
+        text-indent: 1em;
 
     }
     input::-webkit-input-placeholder{
@@ -164,11 +184,11 @@ const signer = provider.getSigner();
         height:45px;
         margin: 20px 10px;
         text-indent: 1em;
-        color: rgba(255,255,255,0.5);
+        color: black;
         background: rgba(233, 237, 247, 0.2);
     }
     option{
-        color: rgba(255,255,255,0.5);
+        color:black;
         background: rgba(233, 237, 247, 0.2);
     }
     #secWay{
@@ -200,5 +220,8 @@ const signer = provider.getSigner();
     }
     #everyProduct{
         border: none;
+    }
+    .dayPost input{
+        text-indent: 0.5em;
     }
 </style>
