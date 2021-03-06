@@ -8,6 +8,7 @@ import Airdrop from '@/view/airdrop';
 import AirdropProjecter from '@/view/airdropProjecter'
 import Dig from '@/view/dig'
 import DigProjecter from '@/view/digProjecter'
+import Test from '@/view/test'
 
 
 
@@ -56,6 +57,11 @@ export default new Router({
       path: '/digProjecter',//挖矿
       name: 'digProjecter',
       component:DigProjecter
+    },
+    {
+      path: '/test',//挖矿
+      name: 'test',
+      component:Test
     }
   ]
 })

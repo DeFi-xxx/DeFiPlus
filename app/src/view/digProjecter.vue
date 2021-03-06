@@ -6,30 +6,41 @@
             </div>
         </div>
         <div class="line"></div>
+        <div class="container" v-show="isPopupVisible">
+        <div class="popup">
+          <section class="popup-body">
+            <input type="text" v-model="num">
+            <button
+              type="button"
+              class="btn-green"
+              @click="closePopup">取消或者确定
+              </button>
+          </section>
+        </div>
+      </div>
         <div v-for="(item,index) in addressArr">
             <div class="promise">
-            <div class="promiseBox">
-                <div class="text" style="border:1px;width:150px; white-space:nowrap;text-overflow:ellipsis;overflow:hidden; ">{{item}}</div>
-            </div>
-        </div>
-        <div class="box">
-            <div class="top">
-                <div class="item">
-                    <div >{{deposits[index]}}</div>
-                    <div>存入信息</div>
-                </div>
-                <div class="item">
-                    <div style="color: #00E3B6" >{{incomes[index]}}</div>
-                    <div>收益信息</div>
+                <div class="promiseBox">
+                    <div class="text" style="border:1px;width:150px; white-space:nowrap;text-overflow:ellipsis;overflow:hidden; ">{{item}}</div>
                 </div>
             </div>
-            <div class="btns">
-                <div class="btn" @click="stake()">存入</div>
-                <div class="btn" @click="withraw()">领取</div>
-                <div class="btn" @click="exit()">退出</div>
+            <div class="box">
+                <div class="top">
+                    <div class="item">
+                        <div >{{deposits[index]}}</div>
+                        <div>存入信息</div>
+                    </div>
+                    <div class="item">
+                        <div style="color: #00E3B6" >{{incomes[index]}}</div>
+                        <div>收益信息</div>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="btn" @click="showPopup()">存入</div>
+                    <div class="btn" @click="withraw()">领取</div>
+                    <div class="btn" @click="exit()">退出</div>
+                </div>
             </div>
-
-        </div>
         </div>
     </div>
 </template>
@@ -51,6 +62,8 @@ const signer = provider.getSigner();
                 addressArr: [],
                 deposits: [],
                 incomes: [],
+                isPopupVisible: false,
+			    num:''
 
 
             }
@@ -132,6 +145,12 @@ const signer = provider.getSigner();
             hexToNumberString(hex) {
                 return this.web3.utils.hexToNumberString(hex);
             },
+            showPopup(){
+                this.isPopupVisible = true
+            },
+            closePopup(){
+                this.isPopupVisible = false
+            }
         }
     }
 </script>
@@ -229,4 +248,52 @@ const signer = provider.getSigner();
     .btns .btn{
         width: 66px;
     }
+    .a {
+      /* position: fixed; */
+      
+       display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup {
+      background: #FFFFFF;
+      box-shadow: 2px 2px 20px 1px;
+      overflow-x: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .popup-header, .popup-footer{
+      padding: 15px;
+      display: flex;
+    }
+    .popup-header {
+      border-bottom: 1px solid #eeeeee;
+      color: #4AAE9B;
+      justify-content: space-between;
+    }
+    .popup-footer {
+      border-top: 1px solid #eeeeee;
+      justify-content: flex-end;
+    }
+    .popup-body {
+      position: relative;
+      padding: 6px 61px 7px 11px;
+    }
+    .btn-close {
+      border: none;
+      font-size: 20px;
+      padding: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #4AAE9B;
+      background: transparent;
+    }
+    .btn-green {
+      color: white;
+      background: #4AAE9B;
+      border: 1px solid #4AAE9B;
+      border-radius: 2px;
+        padding: 2px 9px 2px 9px;
+        margin: 1px 1px 1px 10px;
+    } 
 </style>
