@@ -13,7 +13,12 @@
             <button
               type="button"
               class="btn-green"
-              @click="closePopup">取消或者确定
+              @click="closePopup">取消
+              </button>
+              <button
+              type="button"
+              class="btn-green"
+              @click="closePopup">确定
               </button>
           </section>
         </div>
