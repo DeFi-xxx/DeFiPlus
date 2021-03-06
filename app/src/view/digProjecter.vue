@@ -6,29 +6,45 @@
             </div>
         </div>
         <div class="line"></div>
-        <div class="promise">
+        <div>
+            <div>
+    
+      <div class="a" v-show="isPopupVisible">
+        <div class="popup">
+          <section class="popup-body">
+            <input type="text" v-model="num"/>
+            <button
+              type="button"
+              class="btn-green"
+              @click="closePopup">确定
+              </button>
+          </section>
+        </div>
+      </div>
+  </div>
+            <div class="promise">
             <div class="promiseBox">
-                <div class="hsize">XXX</div>
-                <div class="text">Token合约地址：0xxxxxxxxx</div>
+                <div class="text">Token合约地址：3122222222222222222221333333333332222</div>
             </div>
         </div>
         <div class="box">
             <div class="top">
                 <div class="item">
-                    <div >{{depositInfo}}</div>
+                    <div >1</div>
                     <div>存入信息</div>
                 </div>
                 <div class="item">
-                    <div style="color: #00E3B6" >{{incomeInfo}}</div>
+                    <div style="color: #00E3B6" >1</div>
                     <div>收益信息</div>
                 </div>
             </div>
             <div class="btns">
-                <div class="btn" @click="stake()">存入</div>
+                <div class="btn" @click="showPopup">存入</div><!-- @click="stake()" -->
                 <div class="btn" @click="withraw()">领取</div>
                 <div class="btn" @click="exit()">退出</div>
             </div>
 
+        </div>
         </div>
     </div>
 </template>
@@ -40,18 +56,17 @@ import IERC20 from "../../../build/contracts/IERC20.json";
 import Allocation1 from "../../../build/contracts/FirstAllocation.json";
 const provider = new ethers.providers.Web3Provider(web3.currentProvider);
 const signer = provider.getSigner();
-
     export default {
         name: "projecter",
         data(){
             return{
                 web3: null,
                 firstAllocation: "0x1acb54865e710c6cf8522582de51074d7dE33339",
-                allocationContract: new ethers.Contract(this.firstAllocation, Allocation1.abi, provider),
-                allocationContractWithSigner: allocationContract.connect(signer),
-                depositInfo: "",
-                incomeInfo: "",
-
+                addressArr: [],
+                deposits: [],
+                incomes: [],
+                isPopupVisible: false,
+			    num:''
             }
         },
         created(){
@@ -70,35 +85,68 @@ const signer = provider.getSigner();
                 );
             }
             window.web3 = this.web3;
-            this.getInfo();
+            this.getPoolInfo();
         },
         methods:{
             toPage(){
                 this.$router.push('/dig')
             },
-            async getInfo() {
-            //     let len = await allocationContract.poolLength();
-            //     console.log(len);
-            //     let poolInfo = await allocationContract.poolInfo(len - 1);
-            //     this.depositInfo = allocationContract.getDepositInfo(len - 1);
-            //     // hash = ethers.solidity(lpToken, rewardToken)
-            //     this.incomeInfo = allocationContract.earned(this.account, hash);
+            async getPoolInfo() {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                
+                let length = await allocationContract.poolLength();
+                console.log(this.hexToNumberString(length._hex));
+                this.addressArr = [];
+                this.deposits = [];
+                this.incomes = [];
+                for(let i = 0; i < this.hexToNumberString(length._hex); i++) {
+                    let poolInfo = await allocationContract.poolInfo(i);
+                    this.addressArr.push(poolInfo.rewardToken);
+                    let deposit = await allocationContract.getDepositInfo(i);
+                    this.deposits.push(deposit);
+                    let hash = ethers.utils.solidityKeccak256([address, address], poolInfo.lpToken, poolInfo.rewardToken);
+                    let income = await allocationContract.earned(this.account, hash);
+                    this.incomes.push(income);
+                }
             },
-            stake() {
-            //     allocationContractWithSigner.stake(数量, hash);
+            async stake(index, amount) {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let poolInfo = await allocationContract.poolInfo(index);
+                let lpToken = poolInfo.lpToken;
+                let rewardToken = poolInfo.rewardToken;
+                let hash = ethers.utils.solidityKeccak256([address, address], lpToken, rewardToken);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                await allocationContractWithSigner.stake(amount, hash);
             },
-            withraw() {
-            //     allocationContractWithSigner.stake(hash, 数量);
+            async withraw(index) {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let poolInfo = await allocationContract.poolInfo(index);
+                let lpToken = poolInfo.lpToken;
+                let rewardToken = poolInfo.rewardToken;
+                let hash = ethers.utils.solidityKeccak256([address, address], lpToken, rewardToken);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                await allocationContractWithSigner.getReward(hash);
             },
-            exit() {
-            //     let hash = ethers.utils.solidityKeccak256([address, address], "lptoken", "rewardtoken");
-            //     allocationContractWithSigner.exit(hash);
+            async exit(index) {
+                let allocationContract = new ethers.Contract(this.firstAllocation, Allocation1.abi, provider);
+                let poolInfo = await allocationContract.poolInfo(index);
+                let lpToken = poolInfo.lpToken;
+                let rewardToken = poolInfo.rewardToken;
+                let hash = ethers.utils.solidityKeccak256([address, address], lpToken, rewardToken);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                await allocationContractWithSigner.exit(hash);
             },
             numberToHex(num) {
                 return this.web3.utils.numberToHex(num);
             },
             hexToNumberString(hex) {
                 return this.web3.utils.hexToNumberString(hex);
+            },
+            showPopup(){
+                this.isPopupVisible = true
+            },
+            closePopup(){
+                this.isPopupVisible = false
             },
         }
     }
@@ -113,7 +161,6 @@ const signer = provider.getSigner();
         margin: 13px auto;
     }
     .promiseBox{
-
     }
     .rightPage{
         color:#FA8C16;
@@ -140,6 +187,9 @@ const signer = provider.getSigner();
         font-size: 12px;
         color: #E9EDF7;
         margin: 5px 0;
+        text-overflow:inherit; 
+        overflow: visible; 
+        white-space: pre-line;
     }
     .chosen{
         background: #00E3B6;
@@ -197,4 +247,52 @@ const signer = provider.getSigner();
     .btns .btn{
         width: 66px;
     }
+    .a {
+	    /* position: fixed; */
+	    
+	     display: flex;
+	    justify-content: center;
+	    align-items: center;
+	  }
+	  .popup {
+	    background: #FFFFFF;
+	    box-shadow: 2px 2px 20px 1px;
+	    overflow-x: auto;
+	    display: flex;
+	    flex-direction: column;
+	  }
+	  .popup-header, .popup-footer{
+	    padding: 15px;
+	    display: flex;
+	  }
+	  .popup-header {
+	    border-bottom: 1px solid #eeeeee;
+	    color: #4AAE9B;
+	    justify-content: space-between;
+	  }
+	  .popup-footer {
+	    border-top: 1px solid #eeeeee;
+	    justify-content: flex-end;
+	  }
+	  .popup-body {
+	    position: relative;
+	    padding: 6px 61px 7px 11px;
+	  }
+	  .btn-close {
+	    border: none;
+	    font-size: 20px;
+	    padding: 20px;
+	    cursor: pointer;
+	    font-weight: bold;
+	    color: #4AAE9B;
+	    background: transparent;
+	  }
+	  .btn-green {
+	    color: white;
+	    background: #4AAE9B;
+	    border: 1px solid #4AAE9B;
+	    border-radius: 2px;
+        padding: 2px 9px 2px 9px;
+        margin: 1px 1px 1px 10px;
+	  } 
 </style>
