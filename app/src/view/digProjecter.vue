@@ -24,7 +24,11 @@
   </div>
             <div class="promise">
             <div class="promiseBox">
+<<<<<<< HEAD
                 <div class="text">Token合约地址：3122222222222222222221333333333332222</div>
+=======
+                <div class="text">Token合约地址：0xxxxxxxxx</div>
+>>>>>>> 16e288a4657c18eff28926f8c60b269dae8d23d4
             </div>
         </div>
         <div class="box">
