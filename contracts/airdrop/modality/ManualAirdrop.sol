@@ -27,7 +27,7 @@ contract ManualAirdrop is BaseAirdrop {
     }
 
     function claim(address _token, uint _value) external {
-        bytes32 receiveInfo = keccak256(abi.encode(_token, _value));
+        bytes32 receiveInfo = keccak256(abi.encodePacked(_token, _value));
         require(receiveInfoMap[_token] == receiveInfo && !claimedMap[msg.sender][receiveInfo], "claims");
         claimedMap[msg.sender][receiveInfo] = true;
         if(_token != WBNB) {

@@ -1,7 +1,5 @@
 # DeFiPlus
 
-## Airdrop
-
 
 
 ## Mine
@@ -10,7 +8,7 @@
 
 **MasterChef: ** 0xA683351a223bDeE8Ae81d7133F58c7C1F6a29677
 
-**FirstAllocation: ** 0xc62891B040Bac903851ff09C6EA70a2c3c87C42e
+**FirstAllocation: ** 0x2e945707010B5279C498dAB018a48c3277946B57
 
 **SecondAllocation: ** 0x0E02a99F18c476a42e73F731228f25948Aaea155
 
@@ -20,6 +18,6 @@
 
 ### Contract Address
 
-**Controller: ** 0x565a071faACbdF6057E644D6D151cd7E36360c21
+**Controller: ** 0xC1bB3978f3A5Cd727527Cc82F4E07db41E0B94E7
 
-**ManualAirdrop: ** 0x0039EedBe4Ea5Fa1615F4641323e8A19E409D999
+**ManualAirdrop: ** 0xf53C5Be300530C4604fe9bC8b909C65169fB08E4

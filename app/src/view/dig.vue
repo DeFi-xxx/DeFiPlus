@@ -56,12 +56,12 @@ const signer = provider.getSigner();
         data(){
             return{
                 web3: null,
-                stakeToken: "0x3bFcbe8fd80467750963Ec9b7A1C74cFC4d7fC80",
-                rewardToken: "0x3bFcbe8fd80467750963Ec9b7A1C74cFC4d7fC80",
-                rewardAmount: this.scientificNumber(10000e18),
-                startTime: 1615017859,
+                stakeToken: "",
+                rewardToken: "",
+                rewardAmount: '',
+                startTime: '',
                 duration: 10,
-                firstAllocation: "0xc62891B040Bac903851ff09C6EA70a2c3c87C42e",
+                firstAllocation: "0x2e945707010B5279C498dAB018a48c3277946B57",
                 secondAllocation: "0x0E02a99F18c476a42e73F731228f25948Aaea155",
                 mineWay: 1,
             }
@@ -87,7 +87,7 @@ const signer = provider.getSigner();
             async submit1(){
                 let contract = new ethers.Contract(this.rewardToken, IERC20.abi, provider);
                 let contractWithSigner = contract.connect(signer);
-                let result = await contractWithSigner.approve(this.firstAllocation, this.web3.utils.numberToHex(this.rewardAmount));
+                let result = await contractWithSigner.approve(this.firstAllocation, this.web3.utils.numberToHex(this.scientificNumber(this.rewardAmount * 10 ** 18)));
                 console.log(result);
             },
             async submit2(){
@@ -95,7 +95,7 @@ const signer = provider.getSigner();
                 let allocationContractWithSigner = allocationContract.connect(signer);
                 if(this.mineWay == 1) {
                     let time = this.duration * 24 * 60 * 60;
-                    let alocationResult = await allocationContractWithSigner.add(this.stakeToken, this.rewardToken, this.numberToHex(this.rewardAmount), this.numberToHex(this.startTime), this.numberToHex(time));
+                    let alocationResult = await allocationContractWithSigner.add(this.stakeToken, this.rewardToken, this.numberToHex(this.scientificNumber(this.rewardAmount * 10 ** 18)), this.numberToHex(this.startTime), this.numberToHex(time));
                     console.log(alocationResult);
                //     console.log(alocationResult);
                 // console.log(1)

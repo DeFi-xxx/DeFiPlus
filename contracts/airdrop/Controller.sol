@@ -48,7 +48,7 @@ contract Controller {
         address airdrop;
 
         // 空投方式介绍
-        bytes introduction;
+        bytes32 introduction;
     }
 
     struct ProjectInfo {
@@ -56,7 +56,7 @@ contract Controller {
         address initiator;
 
         // 项目hash
-        bytes project;
+        bytes32 project;
 
         // 空投总量
         uint totalNum;
@@ -72,7 +72,7 @@ contract Controller {
       governance = msg.sender;
     }
 
-    function airdrop(address _token, uint _totalNum, uint _value, uint _option, bytes memory _project) external payable {
+    function airdrop(address _token, uint _totalNum, uint _value, uint _option, bytes32 _project) external payable {
         if(open) {
             require(msg.value >= fee, "insufficient fee");
             payable(governance).transfer(msg.value);
@@ -80,20 +80,20 @@ contract Controller {
             token.safeTransferFrom(msg.sender, governance, _totalNum.mul(tokenPct).div(10000));
         }
         require(airdrops[_option].active, "!active");
-        bytes32 receiveInfo = keccak256(abi.encode(_token, _value));
+        bytes32 receiveInfo = keccak256(abi.encodePacked(_token, _value));
         IBaseAirdrop(airdrops[_option].airdrop).setReceiveInfo(_token, receiveInfo);
         projectInfos.push(ProjectInfo(msg.sender, _project, _totalNum, block.timestamp, _option));
         numProject++;
         emit Airdrop(msg.sender, _token, _value);
     }
 
-    function addAirdrop(address _airdrop, bytes memory _introduction) external {
+    function addAirdrop(address _airdrop, bytes32 _introduction) external {
       require(msg.sender == governance, "!governance");
       airdrops[numAirdrop] = AirdropType(true, _airdrop, _introduction);
       numAirdrop++;
     }
 
-    function setAirdrop(uint _index, bool _active, address _airdrop, bytes memory _introduction) external {
+    function setAirdrop(uint _index, bool _active, address _airdrop, bytes32 _introduction) external {
       require(msg.sender == governance, "!governance");
       airdrops[_index] = AirdropType(_active, _airdrop, _introduction);
     }

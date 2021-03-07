@@ -86,6 +86,7 @@ contract FirstAllocation {
     function stake(uint _amount, bytes32 _hash) external updateReward( msg.sender, _hash) {
         require(_amount > 0, "Cannot stake 0");
         uint index = poolIndex[_hash];
+        poolInfo[index].lpToken.safeTransferFrom(msg.sender, address(this), _amount);
         poolInfo[index].deposits[ msg.sender] = poolInfo[index].deposits[ msg.sender].add(_amount);
         poolInfo[index].totalAmount = poolInfo[index].totalAmount.add(_amount);
     }

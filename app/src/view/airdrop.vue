@@ -6,23 +6,34 @@
             </div>
         </div>
         <div class="projectMes">
-            <input class="input"  placeholder="请输入Token合约地址" />
-            <input class="input" placeholder="空投数量" />
+            <input class="input" v-model="token"  placeholder="请输入Token合约地址" />
+            <input class="input" v-model="amount" placeholder="空投数量" />
+            <input class="input" v-model="value" placeholder="人/数量" />
 
             <select id="secWay" v-model="selected" @change="getSelected()">
                 <option v-for="item in list" :style="{display:item.id==0?'none':'block'}"  :value="item.id" >{{item.name}}</option>
             </select>
-            <div class="chosen" @click="submit()">授权</div>
-            <div class="chosen" @click="submit()">发放空投</div>
+            <div class="chosen" @click="submit1()">授权</div>
+            <div class="chosen" @click="submit2()">发放空投</div>
         </div>
     </div>
 </template>
 
 <script>
+import { ethers } from 'ethers';
+import Web3 from "web3";
+import IERC20 from "../../../build/contracts/IERC20.json";
+import Controller from "../../../build/contracts/Controller.json";
+const provider = new ethers.providers.Web3Provider(web3.currentProvider);
+const signer = provider.getSigner();
     export default {
         name: "airdrop",
         data(){
             return{
+                token: "0xcf3379feefd55ab18333f947bd2d54e3a6dd954f",
+                amount: this.scientificNumber(10000000000000000000000),
+                controller: "0xC1bB3978f3A5Cd727527Cc82F4E07db41E0B94E7",
+                value: this.scientificNumber(1000000000000000000),
                 selected:'0',
                 list:[
                     {
@@ -46,7 +57,22 @@
         },
         created(){
             //如果没有这句代码，select中初始化会是空白的，默认选中就无法实现
-            this.selected = '2';
+            this.selected = '1';
+            window.ethers = ethers;
+            if (window.ethereum) {
+                // use MetaMask's provider
+                this.web3 = new Web3(window.ethereum);
+                window.ethereum.enable(); // get permission to access accounts
+            } else {
+                console.warn(
+                "No web3 detected. Falling back to http://127.0.0.1:8545. You should remove this fallback when you deploy live",
+                );
+                // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+                this.web3 = new Web3(
+                new Web3.providers.HttpProvider("http://127.0.0.1:8545"),
+                );
+            }
+            window.web3 = this.web3;
         },
         methods:{
             toPage(){
@@ -56,6 +82,62 @@
                 // this.selected =
                 console.log(11111)
                 console.log(e,this.selected)
+            },
+            async submit1() {
+                let allocationContract = new ethers.Contract(this.token, IERC20.abi, provider);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                let resutl = await allocationContractWithSigner.approve(this.controller, this.numberToHex(this.amount));
+            },
+            async submit2() {
+                let allocationContract = new ethers.Contract(this.token, Controller.abi, provider);
+                let allocationContractWithSigner = allocationContract.connect(signer);
+                await allocationContractWithSigner.airdrop(
+                    this.token,
+                    this.numberToHex(this.amount),
+                    this.numberToHex(this.value),
+                    0,
+                    "0x0000000000000000000000000000000000000000000000000000000000000000"
+                );
+                console.log("发放");
+            },
+            numberToHex(num) {
+                return this.web3.utils.numberToHex(num);
+            },
+            hexToNumberString(hex) {
+                return this.web3.utils.hexToNumberString(hex);
+            },
+            hexToNumber(hex) {
+                return this.web3.utils.hexToNumber(hex);
+            },
+            scientificNumber (num) {
+                if (!num) return num
+                const str = num.toString()
+                const reg = /^(\d+)(\.\d+)?(e)([+]?\d+)$/
+                const reg2 = /^(\d+)(\.\d+)?(e)([-]?\d+)$/
+                let arr
+                let len
+                let zero = ''
+                if (reg.test(str)) {
+                arr = reg.exec(str)
+                // 保留小数位数
+                const arr2 = arr[2] ? arr[2].replace('.', '') : ''
+                // 此处减去arr2的长度为了兼容有小数情况
+                len = Math.abs(arr[4]) - (arr2.length || 0)
+                for (var i = 0; i < len; i++) {
+                    zero += '0'
+                }
+                return arr[1] + arr2 + zero
+                } else if (reg2.test(str)) {
+                arr = reg2.exec(str)
+                len = Math.abs(arr[4]) - 1
+                const arr2 = arr[2] ? arr[2].replace('.', '') : ''
+                for (let index = 0; index < len; index++) {
+                    zero += '0'
+                }
+                return '0.' + zero + arr[1] + arr2
+                } else {
+                return num
+                }
             }
         }
     }
